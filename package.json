@@ -4,12 +4,9 @@
   "description": "Nest TypeScript starter repository",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
     "test": "jest",
     "tests": "jest --watch",
     "start": "node index.js",
-    "watch": "tsc -w",
-    "serve": "nodemon -e ts --watch src --exec \"npm run build && npm run start\" ",
     "types": "types-installer install --toDev"
   },
   "jest": {
@@ -58,7 +55,7 @@
     "nodemon": "^1.11.0",
     "sinon": "^2.4.1",
     "ts-jest": "^22.0.4",
-    "ts-node": "^3.3.0",
+    "ts-node": "^4.1.0",
     "types-installer": "^1.4.0",
     "typescript": "^2.4.2"
   },
