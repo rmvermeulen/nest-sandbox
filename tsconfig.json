@@ -10,13 +10,9 @@
     "target": "es6",
     "sourceMap": true,
     "allowJs": true,
-    "outDir": "./bin"
+    "outDir": "./dist",
+    "lib": ["esnext"]
   },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
