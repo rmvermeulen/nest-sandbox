@@ -139,6 +139,10 @@
   version "0.25.17"
   resolved "https://registry.yarnpkg.com/@types/ramda/-/ramda-0.25.17.tgz#2879779be272ba265415baf4cc3299a1f00e1955"
 
+"@types/ramda@types/npm-ramda":
+  version "0.25.0"
+  resolved "https://codeload.github.com/types/npm-ramda/tar.gz/a28b39930df4fed9764c52fb98552b54351558a5"
+
 "@types/reflect-metadata@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@types/reflect-metadata/-/reflect-metadata-0.1.0.tgz#592805bdf6d63dd7229773218afeba37ac2eab16"

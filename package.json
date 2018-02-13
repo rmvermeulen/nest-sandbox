@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest",
     "tests": "jest --watch",
-    "start": "node index.js",
     "types": "types-installer install --toDev",
     "precommit": "lint-staged",
     "format": "prettier --write"
@@ -54,7 +53,7 @@
     "@types/graphql": "^0.12.3",
     "@types/jest": "^22.1.2",
     "@types/node": "^8.0.19",
-    "@types/ramda": "^0.25.17",
+    "@types/ramda": "types/npm-ramda",
     "@types/reflect-metadata": "^0.1.0",
     "@types/sinon": "^4.1.3",
     "@types/typescript": "^2.0.0",
