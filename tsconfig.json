@@ -12,7 +12,10 @@
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es6"
+    "target": "es6",
+    "paths": {
+      "ramda": ["node_modules/types/npm-ramda-package/index"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

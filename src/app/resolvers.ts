@@ -17,14 +17,15 @@ type Resolver<From, To> = (f: From) => To
 export const resolvers = {
   Author: {
     name: ({ firstName, lastName }: Author) => `${firstName} ${lastName}`,
-    posts: pipe(prop('id'), propEq('authorId'), filter(__, posts)) as Resolver<
-      Author,
-      Post[]
-    >,
+    posts: pipe(
+      prop('id'),
+      propEq('authorId') as any,
+      filter(__, posts),
+    ) as Resolver<Author, Post[]>,
     votes: pipe(
       prop('postIds'),
-      flip(contains),
-      propSatisfies(__, 'id'),
+      flip(contains) as any,
+      propSatisfies(__, 'id') as any,
       filter(__, posts),
       pluck('votes'),
       sum,

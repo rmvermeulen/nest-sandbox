@@ -143,6 +143,10 @@
   version "0.25.0"
   resolved "https://codeload.github.com/types/npm-ramda/tar.gz/a28b39930df4fed9764c52fb98552b54351558a5"
 
+"@types/ramda@types/npm-ramda#dist":
+  version "0.25.0"
+  resolved "https://codeload.github.com/types/npm-ramda/tar.gz/aa2ef41bf32097a6a49230b42cbb955dc3e68193"
+
 "@types/reflect-metadata@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@types/reflect-metadata/-/reflect-metadata-0.1.0.tgz#592805bdf6d63dd7229773218afeba37ac2eab16"
