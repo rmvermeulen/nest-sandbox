@@ -20,6 +20,7 @@
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },
+    "setupTestFrameworkScriptFile": "./setupJest.ts",
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
     "moduleFileExtensions": [
       "ts",
