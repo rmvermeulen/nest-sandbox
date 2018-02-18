@@ -13,7 +13,8 @@
   "lint-staged": {
     "src/**/*": [
       "yarn format",
-      "git add"
+      "git add",
+      "jest --findRelatedTests"
     ]
   },
   "jest": {
