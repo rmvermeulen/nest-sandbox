@@ -1,7 +1,6 @@
 import { Test } from '@nestjs/testing'
 import { TestingModule } from '@nestjs/testing/testing-module'
 import { HomeController } from './home.controller'
-import { expect } from 'chai'
 
 describe('HomeController', () => {
   let module: TestingModule
@@ -19,6 +18,6 @@ describe('HomeController', () => {
   })
 
   it('should exist', () => {
-    expect(controller).to.exist
+    expect(controller).toBeDefined()
   })
 })

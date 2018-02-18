@@ -3,7 +3,7 @@ export interface Author {
   id: ID
   firstName: string
   lastName: string
-  postIds: Post['id'][]
+  postIds: Array<Post['id']>
 }
 
 export interface Post {
@@ -21,15 +21,15 @@ export const posts: Post[] = [
 
 export const authors: Author[] = [
   {
+    firstName: 'Andy',
     id: 'author-1',
-    firstName: 'Rms',
-    lastName: 'Frms',
+    lastName: 'Armstrong',
     postIds: ['post-1', 'post-3'],
   },
   {
-    id: 'author-2',
     firstName: 'Bob',
-    lastName: 'Suxxer',
+    id: 'author-2',
+    lastName: 'Barley',
     postIds: ['post-2'],
   },
 ]

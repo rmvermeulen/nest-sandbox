@@ -3,21 +3,19 @@ import { delay } from 'bluebird'
 
 @Controller('home')
 export class HomeController {
-  constructor() {}
-
   @Get()
-  async root(): Promise<string> {
+  public async root(): Promise<string> {
     return 'home page'
   }
 
   @Get('secret')
-  async getSomeValue() {
-    await delay(100)
+  public async getSomeValue() {
+    await delay(100).then(() => true)
     return 'some value'
   }
 
   @Get('value2')
-  async getOtherValue() {
+  public async getOtherValue() {
     await delay(100)
     return 'some other value'
   }

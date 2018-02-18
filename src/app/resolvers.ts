@@ -1,25 +1,34 @@
 import {
-  propEq,
-  sum,
-  pipe,
-  prop,
-  pluck,
-  contains,
-  flip,
-  tap,
-  where,
-  filter,
-  propSatisfies,
   __,
+  contains,
+  filter,
+  flip,
+  pipe,
+  pluck,
+  prop,
+  propEq,
+  propSatisfies,
+  sum,
 } from 'ramda'
 
-import { posts, authors, Author, Post } from './database'
+import { Author, authors, Post, posts } from './database'
 
 type Resolver<From, To> = (f: From) => To
 export const resolvers = {
-  Query: {
-    authors: () => authors,
-    posts: () => posts,
+  Author: {
+    name: ({ firstName, lastName }: Author) => `${firstName} ${lastName}`,
+    posts: pipe(prop('id'), propEq('authorId'), filter(__, posts)) as Resolver<
+      Author,
+      Post[]
+    >,
+    votes: pipe(
+      prop('postIds'),
+      flip(contains),
+      propSatisfies(__, 'id'),
+      filter(__, posts),
+      pluck('votes'),
+      sum,
+    ) as Resolver<Author, number>,
   },
   Mutation: {
     upvotePost(_, { postId }) {
@@ -31,27 +40,13 @@ export const resolvers = {
       return post
     },
   },
-  Author: {
-    // prettier-ignore
-    posts: pipe(
-      prop('id'),
-      propEq('authorId'),
-      filter(__, posts)
-    ) as Resolver<Author, Post[]>,
-
-    name: ({ firstName, lastName }: Author) => `${firstName} ${lastName}`,
-    votes: pipe(
-      prop('postIds'),
-      flip(contains),
-      propSatisfies(__, 'id'),
-      filter(__, posts),
-      pluck('votes'),
-      sum,
-    ) as Resolver<Author, number>,
-  },
   Post: {
     author(post: Post) {
       return authors.find(propEq('id', post.authorId))
     },
+  },
+  Query: {
+    authors: () => authors,
+    posts: () => posts,
   },
 }

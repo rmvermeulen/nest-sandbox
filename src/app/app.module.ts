@@ -1,33 +1,33 @@
 import {
-  Module,
   MiddlewaresConsumer,
+  Module,
   NestModule,
   RequestMethod,
 } from '@nestjs/common'
-import { graphqlExpress, graphiqlExpress } from 'apollo-server-express'
 import { GraphQLModule } from '@nestjs/graphql'
+import { graphiqlExpress, graphqlExpress } from 'apollo-server-express'
 import { makeExecutableSchema } from 'graphql-tools'
 
 import { HomeController } from './controllers/home/home.controller'
-import { typeDefs } from './typedefs'
 import { resolvers } from './resolvers'
+import { typeDefs } from './typedefs'
 
 const executableSchema = makeExecutableSchema({
-  typeDefs,
   resolvers,
-})
+  typeDefs,
+} as any)
 
 @Module({
   controllers: [HomeController],
   imports: [GraphQLModule],
 })
 export class ApplicationModule implements NestModule {
-  configure(consumer: MiddlewaresConsumer) {
+  public configure(consumer: MiddlewaresConsumer) {
     consumer
       .apply(
         graphqlExpress(req => ({
+          rootValue: req,
           schema: executableSchema,
-          rootValue: req as any,
         })),
       )
       .forRoutes({ path: '/graphql', method: RequestMethod.ALL })
@@ -37,8 +37,8 @@ export class ApplicationModule implements NestModule {
         })),
       )
       .forRoutes({
-        path: '/graphiql',
         method: RequestMethod.ALL,
+        path: '/graphiql',
       })
   }
 }

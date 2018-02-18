@@ -6,6 +6,10 @@
     "tslint-config-prettier"
   ],
   "jsRules": {},
-  "rules": {},
+  "rules": {
+    "await-promise": [true, "Bluebird"],
+    "interface-name": false,
+    "no-console": false
+  },
   "rulesDirectory": []
 }
