@@ -8,11 +8,14 @@
     "tests": "jest --watch",
     "types": "types-installer install --toDev",
     "precommit": "lint-staged",
-    "format": "prettier --write"
+    "format": "prettier --write",
+    "fix": "tslint --fix -p tsconfig.json -t stylish",
+    "fix:show-errors": "yarn fix -t code-frame"
   },
   "lint-staged": {
     "src/**/*": [
       "yarn format",
+      "yarn fix:show-errors",
       "git add",
       "jest --findRelatedTests"
     ]

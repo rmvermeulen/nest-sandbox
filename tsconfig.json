@@ -1,18 +1,19 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "allowJs": true,
     "declaration": false,
-    "noImplicitAny": false,
-    "removeComments": true,
-    "noLib": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es6",
-    "sourceMap": true,
-    "allowJs": true,
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "noLib": false,
     "outDir": "./dist",
-    "lib": ["esnext"]
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6"
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules"]
 }
