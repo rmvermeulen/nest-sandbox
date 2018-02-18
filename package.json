@@ -68,6 +68,9 @@
     "supertest": "^3.0.0",
     "ts-jest": "^22.0.4",
     "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "tslint-config-prettier": "^1.8.0",
+    "tslint-config-standard": "^7.0.0",
     "types-installer": "^1.4.0",
     "typescript": "^2.4.2"
   },
