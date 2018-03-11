@@ -15,7 +15,7 @@
     "fix:show-errors": "yarn fix -t code-frame"
   },
   "lint-staged": {
-    "src/**/*": [
+    "src/**/*{ts,json}": [
       "yarn format",
       "yarn fix:show-errors",
       "git add",
