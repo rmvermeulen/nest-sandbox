@@ -1,21 +1,25 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "baseUrl": ".",
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["esnext"],
     "module": "commonjs",
-    "noImplicitAny": false,
+    "noEmit": true,
+    "noImplicitAny": true,
     "noLib": false,
-    "outDir": "./dist",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@controllers/*": ["src/app/controllers/*"],
+      "@middlewares/*": ["src/app/middlewares/*"],
+      "@modules/*": ["src/app/modules/*"]
+    },
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es6",
-    "paths": {
-      "ramda": ["node_modules/types/npm-ramda-package/index"]
-    }
+    "target": "es6"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]

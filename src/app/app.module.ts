@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common'
 
-import { HomeController } from './controllers/home/home.controller'
-import { GQLModule } from './modules/gql/gql.module'
+import { HomeController } from '@controllers/home'
+import { GQLModule } from '@modules/gql'
 
 @Module({
   controllers: [HomeController],

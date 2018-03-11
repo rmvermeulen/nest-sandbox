@@ -4,6 +4,8 @@
   "description": "Nest TypeScript starter repository",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon -e ts,json",
     "test": "jest",
     "tests": "jest --watch",
     "types": "types-installer install --toDev",
@@ -33,7 +35,13 @@
       "jsx",
       "json",
       "node"
-    ]
+    ],
+    "moduleNameMapper": {
+      "@app/(.*)": "<rootDir>/src/app/$1",
+      "@controllers/(.*)": "<rootDir>/src/app/controllers/$1/$1.controller",
+      "@modules/(.*)": "<rootDir>/src/app/modules/$1/$1.module",
+      "@middlewares/(.*)": "<rootDir>/src/app/middlewares/$1/$1.middleware"
+    }
   },
   "dependencies": {
     "@nestjs/common": "^4.0.2",
@@ -48,7 +56,8 @@
     "graphql-tools": "^2.21.0",
     "ramda": "^0.25.0",
     "reflect-metadata": "^0.1.10",
-    "rxjs": "^5.4.3"
+    "rxjs": "^5.4.3",
+    "tsconfig-paths": "^3.1.1"
   },
   "devDependencies": {
     "@types/": "nestjs/graphql",
