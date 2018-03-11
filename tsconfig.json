@@ -14,11 +14,13 @@
       "@app/*": ["src/app/*"],
       "@controllers/*": ["src/app/controllers/*"],
       "@middlewares/*": ["src/app/middlewares/*"],
-      "@modules/*": ["src/app/modules/*"]
+      "@modules/*": ["src/app/modules/*"],
+      "@entities/*": ["src/app/entities/*"]
     },
     "removeComments": true,
     "sourceMap": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "target": "es6"
   },
   "include": ["src/**/*"],

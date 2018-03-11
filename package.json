@@ -38,9 +38,10 @@
     ],
     "moduleNameMapper": {
       "@app/(.*)": "<rootDir>/src/app/$1",
-      "@controllers/(.*)": "<rootDir>/src/app/controllers/$1/$1.controller",
-      "@modules/(.*)": "<rootDir>/src/app/modules/$1/$1.module",
-      "@middlewares/(.*)": "<rootDir>/src/app/middlewares/$1/$1.middleware"
+      "@controllers/(.*)": "<rootDir>/src/app/controllers/$1",
+      "@modules/(.*)": "<rootDir>/src/app/modules/$1",
+      "@middlewares/(.*)": "<rootDir>/src/app/middlewares/$1",
+      "@entities/(.*)": "<rootDir>/src/app/entities/$1"
     }
   },
   "dependencies": {

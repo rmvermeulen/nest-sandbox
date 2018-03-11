@@ -7,6 +7,8 @@
   ],
   "jsRules": {},
   "rules": {
+    
+    "member-access": false,
     "await-promise": [true, "Bluebird"],
     "interface-name": false,
     "no-console": false
