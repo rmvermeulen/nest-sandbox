@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Server can resolve arbitrarily nested queries 1`] = `
+Object {
+  "authors": Array [
+    Object {
+      "posts": Array [
+        Object {
+          "author": Object {
+            "posts": Array [
+              Object {
+                "author": Object {
+                  "id": "author-1",
+                },
+              },
+              Object {
+                "author": Object {
+                  "id": "author-1",
+                },
+              },
+            ],
+          },
+        },
+        Object {
+          "author": Object {
+            "posts": Array [
+              Object {
+                "author": Object {
+                  "id": "author-1",
+                },
+              },
+              Object {
+                "author": Object {
+                  "id": "author-1",
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+    Object {
+      "posts": Array [
+        Object {
+          "author": Object {
+            "posts": Array [
+              Object {
+                "author": Object {
+                  "id": "author-2",
+                },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  ],
+}
+`
