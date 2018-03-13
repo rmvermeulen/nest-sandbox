@@ -7,7 +7,11 @@
   ],
   "jsRules": {},
   "rules": {
-    
+    "object-literal-sort-keys": [
+      true,
+      "match-declaration-order",
+      "shorthand-first"
+    ],
     "member-access": false,
     "await-promise": [true, "Bluebird"],
     "interface-name": false,
