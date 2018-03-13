@@ -4,21 +4,23 @@
   "description": "Nest TypeScript starter repository, trying graphql + multi db",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon -e ts,json",
+    "start": "NODE_ENV=production node",
+    "dev": "nodemon -e ts,json,yaml",
     "test": "jest",
     "tests": "jest --watch",
     "types": "types-installer install --toDev",
+    "build": "tsc",
+    "postbuild":"# transform imports with babel",
     "precommit": "lint-staged",
     "format": "prettier --write",
     "fix": "tslint --fix -p tsconfig.json -t stylish",
     "vscode:fix": "tslint --fix -p tsconfig.json",
-    "fix:show-errors": "yarn fix -t code-frame"
+    "fix:fancy": "yarn fix -t code-frame"
   },
   "lint-staged": {
     "src/**/*{ts,json}": [
       "yarn format",
-      "yarn fix:show-errors",
+      "yarn fix:fancy",
       "git add",
       "jest --findRelatedTests"
     ]

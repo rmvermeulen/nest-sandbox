@@ -7,9 +7,9 @@
     "experimentalDecorators": true,
     "lib": ["esnext"],
     "module": "commonjs",
-    "noEmit": true,
     "noImplicitAny": true,
     "noLib": false,
+    "outDir": "./dist",
     "paths": {
       "@app/*": ["src/app/*"],
       "@controllers/*": ["src/app/controllers/*"],
