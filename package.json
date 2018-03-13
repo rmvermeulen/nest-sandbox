@@ -12,6 +12,7 @@
     "precommit": "lint-staged",
     "format": "prettier --write",
     "fix": "tslint --fix -p tsconfig.json -t stylish",
+    "vscode:fix": "tslint --fix -p tsconfig.json",
     "fix:show-errors": "yarn fix -t code-frame"
   },
   "lint-staged": {
