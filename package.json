@@ -18,7 +18,11 @@
     "fix:fancy": "yarn fix -t code-frame"
   },
   "lint-staged": {
-    "src/**/*{ts,json}": [
+    "*.json": [
+      "yarn format",
+      "git add"
+    ],
+    "src/**/*.ts": [
       "yarn format",
       "yarn fix:fancy",
       "git add",
