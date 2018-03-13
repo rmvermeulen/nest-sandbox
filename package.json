@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "nest-sandbox",
   "version": "2.0.0",
-  "description": "Nest TypeScript starter repository",
+  "description": "Nest TypeScript starter repository, trying graphql + multi db",
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
