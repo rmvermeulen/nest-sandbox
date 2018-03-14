@@ -11,7 +11,7 @@
     "types": "types-installer install --toDev",
     "build": "tsc",
     "postbuild":"# transform imports with babel",
-    "precommit": "lint-staged",
+    "precommit": "lint-staged && yarn test",
     "format": "prettier --write",
     "fix": "tslint --fix -p tsconfig.json -t stylish",
     "vscode:fix": "tslint --fix -p tsconfig.json",
@@ -25,8 +25,7 @@
     "src/**/*.ts": [
       "yarn format",
       "yarn fix:fancy",
-      "git add",
-      "jest --findRelatedTests"
+      "git add"
     ]
   },
   "dependencies": {
