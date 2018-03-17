@@ -1,17 +1,16 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
 
+// import { Author } from '@modules/author'
 @Entity()
 export class Post {
   @PrimaryGeneratedColumn() id: number
 
-  @Column({
-    type: 'text',
+  @Column('text', {
     nullable: true,
   })
   title: string
 
-  @Column({
-    type: 'int',
+  @Column('int', {
     nullable: true,
   })
   votes: number

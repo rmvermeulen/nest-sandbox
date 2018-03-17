@@ -32,7 +32,7 @@ export const resolvers = {
     ) as Resolver<Author, number>,
   },
   Mutation: {
-    upvotePost(_, { postId }) {
+    upvotePost(_: any, { postId }: Post) {
       const post = posts.find(propEq('id', postId))
       if (!post) {
         throw new Error(`Couldn't find post with id ${postId}`)

@@ -2,13 +2,14 @@ import { Component } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { Repository } from 'typeorm'
 
-import { Post } from './post.entity'
+import { Author } from './author.entity'
 
 @Component()
-export class PostService {
+export class AuthorService {
   // TODO: private repository
   constructor(
-    @InjectRepository(Post) public readonly postRepository: Repository<Post>,
+    @InjectRepository(Author)
+    public readonly authorRepository: Repository<Author>,
   ) {}
   // TODO: methods
 }
