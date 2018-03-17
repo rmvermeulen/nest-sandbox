@@ -3,7 +3,7 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest',
   },
   setupTestFrameworkScriptFile: './setupJest.ts',
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec ))\\.(jsx?|tsx?)$',
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
     '@app/(.*)': '<rootDir>/src/app/$1',
