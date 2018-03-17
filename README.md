@@ -1,5 +1,9 @@
 # Nest Sandbox
 
+Based on `Nest framework TypeScript starter`
+
+> Starter repository for [Nest](https://github.com/kamilmysliwiec/nest) framework.
+
 Wishlist:
 
 * [x] GraphQL
@@ -18,22 +22,10 @@ Setup
 * [x] jest
 * [ ] build, transformed imports
 
-## Based on
-
-### Nest framework TypeScript starter
-
-Starter repository for [Nest](https://github.com/kamilmysliwiec/nest) framework.
-
 ### Installation
 
 ```
 $ yarn --pure-lockfile
-```
-
-### Start
-
-```
-$ yarn
 ```
 
 ### Scripts
