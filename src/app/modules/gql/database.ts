@@ -21,14 +21,14 @@ export const posts: Post[] = [
 
 export const authors: Author[] = [
   {
-    firstName: 'Andy',
     id: 'author-1',
+    firstName: 'Andy',
     lastName: 'Armstrong',
     postIds: ['post-1', 'post-3'],
   },
   {
-    firstName: 'Bob',
     id: 'author-2',
+    firstName: 'Bob',
     lastName: 'Barley',
     postIds: ['post-2'],
   },

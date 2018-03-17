@@ -1,1 +1,1 @@
-export * from './gql.module'
+export { GQLModule } from './gql.module'

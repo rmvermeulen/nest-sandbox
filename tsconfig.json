@@ -15,7 +15,8 @@
       "@controllers/*": ["src/app/controllers/*"],
       "@middlewares/*": ["src/app/middlewares/*"],
       "@modules/*": ["src/app/modules/*"],
-      "@entities/*": ["src/app/entities/*"]
+      "@entities/*": ["src/app/entities/*"],
+      "@services/*": ["src/app/services/*"]
     },
     "removeComments": true,
     "sourceMap": true,
