@@ -3,3 +3,4 @@ dist
 yarn-error.log
 .vscode
 package-lock.json
+coverage
