@@ -1,0 +1,5 @@
+typeorm:
+  type: sqlite
+  database: ./db.sqlite
+  synchronize: true
+  entities: src/**/*.entity.ts
