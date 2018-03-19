@@ -12,4 +12,5 @@ module.exports = {
     '@middlewares/(.*)': '<rootDir>/src/app/middlewares/$1',
     '@services/(.*)': '<rootDir>/src/app/services/$1',
   },
+  testEnvironment: 'node',
 }
