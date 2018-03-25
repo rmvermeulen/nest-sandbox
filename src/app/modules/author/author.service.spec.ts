@@ -1,16 +1,16 @@
 import { Test } from '@nestjs/testing'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { Author } from '@modules/author'
-import { Post, PostService } from '@modules/post'
+import { Author, AuthorService } from '@modules/author'
+import { Post } from '@modules/post'
 
 describe('Post Service', () => {
-  let posts: PostService
+  let authors: AuthorService
 
   beforeAll(async () => {
     const tm = await Test.createTestingModule({
       imports: [
-        TypeOrmModule.forFeature([Post]),
+        TypeOrmModule.forFeature([Author]),
         TypeOrmModule.forRoot({
           database: ':memory:',
           entities: [Author, Post],
@@ -18,14 +18,14 @@ describe('Post Service', () => {
           type: 'sqlite',
         }),
       ],
-      components: [PostService],
+      components: [AuthorService],
     }).compile()
 
-    posts = tm.get(PostService)
-    expect(posts).toBeTruthy()
+    authors = tm.get(AuthorService)
+    expect(authors).toBeTruthy()
   })
 
   it('enables orm stuff', async () => {
-    expect(await posts.findAll()).toEqual([])
+    expect(await authors.findAll()).toEqual([])
   })
 })
