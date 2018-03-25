@@ -4,29 +4,25 @@ import {
   NestModule,
   RequestMethod,
 } from '@nestjs/common'
-import { GraphQLModule } from '@nestjs/graphql'
+import { GraphQLFactory, GraphQLModule } from '@nestjs/graphql'
 import { graphiqlExpress, graphqlExpress } from 'apollo-server-express'
 import { Request as Req, Response as Res } from 'express'
-import { makeExecutableSchema } from 'graphql-tools'
-
-import { resolvers } from './resolvers'
-import { typeDefs } from './typedefs'
-
-const executableSchema = makeExecutableSchema({
-  resolvers,
-  typeDefs,
-} as any)
 
 @Module({
   imports: [GraphQLModule],
 })
 export class GQLModule implements NestModule {
+  constructor(private readonly graphQLFactory: GraphQLFactory) {}
+
   public configure(consumer: MiddlewaresConsumer) {
+    const typeDefs = this.graphQLFactory.mergeTypesByPaths('./**/*.graphql')
+    const schema = this.graphQLFactory.createSchema({ typeDefs })
+
     consumer
       .apply(
         graphqlExpress(req => ({
+          schema,
           rootValue: req,
-          schema: executableSchema,
         })),
       )
       .forRoutes({ method: RequestMethod.ALL, path: '/graphql' })

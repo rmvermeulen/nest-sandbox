@@ -21,7 +21,7 @@ describe('App, gql', () => {
       .get('/graphql?query={ authors { name votes } }')
       .expect(200)
       .then(({ body: { data } }) => {
-        for (const author of data.authors) {
+        for (const author of data.authors || []) {
           expect(author).toBeTruthy()
           expect(author).toHaveProperty('name')
           expect(author).toHaveProperty('votes')
@@ -34,7 +34,7 @@ describe('App, gql', () => {
 
       .expect(200)
       .then(({ body: { data } }) => {
-        for (const post of data.posts) {
+        for (const post of data.posts || []) {
           expect(post).toBeTruthy()
           expect(post).toHaveProperty('title')
           expect(post).toHaveProperty('votes')

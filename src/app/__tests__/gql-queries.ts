@@ -39,35 +39,14 @@ describe('Server', () => {
       getQuery(`{
       posts { id }
     }`),
-    ).resolves.toEqual({
-      posts: [
-        {
-          id: 'post-1',
-        },
-        {
-          id: 'post-2',
-        },
-        {
-          id: 'post-3',
-        },
-      ],
-    }))
+    ).resolves.toMatchSnapshot())
 
   it('can query Authors', () =>
     expect(
       getQuery(`{
       authors { id }
     }`),
-    ).resolves.toEqual({
-      authors: [
-        {
-          id: 'author-1',
-        },
-        {
-          id: 'author-2',
-        },
-      ],
-    }))
+    ).resolves.toMatchSnapshot())
 
   it('can resolve arbitrarily nested queries', () =>
     expect(
