@@ -1,22 +1,30 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
+import * as config from 'config'
+import { merge } from 'ramda'
+import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionOptions'
 
-import { Author } from '../author'
-import { Post } from '../post'
+const ormConfig = config.get<SqliteConnectionOptions>('typeorm')
 
-const rootOrmModule = TypeOrmModule.forRoot({
-  database: './db.sqlite',
-  entities: [Post, Author],
-  synchronize: true,
-  type: 'sqlite',
-})
-
-@Module({
-  imports: [rootOrmModule],
-  exports: [rootOrmModule],
-})
+@Module({})
 export class OrmModule {
   static forRoot() {
-    return rootOrmModule
+    return TypeOrmModule.forRoot(ormConfig)
+  }
+
+  // tslint:disable-next-line ban-types
+  static forTest(entities?: Function[]) {
+    const options: SqliteConnectionOptions = entities
+      ? merge(ormConfig, { entities })
+      : ormConfig
+
+    const typeOrmModule = TypeOrmModule.forRoot(options)
+
+    const ormWithFeatures = [typeOrmModule, TypeOrmModule.forFeature(entities)]
+    return {
+      exports: ormWithFeatures,
+      module: OrmModule,
+      modules: ormWithFeatures,
+    }
   }
 }

@@ -1,23 +1,15 @@
 import { Test } from '@nestjs/testing'
-import { TypeOrmModule } from '@nestjs/typeorm'
 
 import { Author, AuthorService } from '@modules/author'
+import { OrmModule } from '@modules/orm'
 import { Post } from '@modules/post'
 
-describe('Post Service', () => {
+describe('Author Service', () => {
   let authors: AuthorService
 
   beforeAll(async () => {
     const tm = await Test.createTestingModule({
-      imports: [
-        TypeOrmModule.forFeature([Author]),
-        TypeOrmModule.forRoot({
-          database: ':memory:',
-          entities: [Author, Post],
-          synchronize: true,
-          type: 'sqlite',
-        }),
-      ],
+      imports: [OrmModule.forTest([Author, Post])],
       components: [AuthorService],
     }).compile()
 
