@@ -7,7 +7,6 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
     '@app/(.*)': '<rootDir>/src/app/$1',
-    '@controllers/(.*)': '<rootDir>/src/app/controllers/$1',
     '@modules/(.*)': '<rootDir>/src/app/modules/$1',
     '@middlewares/(.*)': '<rootDir>/src/app/middlewares/$1',
     '@services/(.*)': '<rootDir>/src/app/services/$1',
