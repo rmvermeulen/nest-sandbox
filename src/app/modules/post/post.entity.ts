@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { prop } from 'ramda'
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 
-// import { Author } from '@modules/author'
+import { Author } from '@modules/author'
 @Entity()
 export class Post {
   @PrimaryGeneratedColumn() id: number
@@ -15,6 +16,6 @@ export class Post {
   })
   votes: number
 
-  // @ManyToOne(type => Author, prop('posts'))
-  // author: Author
+  @ManyToOne(type => Author, prop('posts'))
+  author: Author
 }

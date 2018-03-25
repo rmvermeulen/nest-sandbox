@@ -1,6 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm'
+import { prop } from 'ramda'
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 
-// import { Post } from '@modules/post'
+import { Post } from '@modules/post'
 
 @Entity('author')
 export class Author {
@@ -16,6 +17,6 @@ export class Author {
   })
   lastName: string
 
-  // @OneToMany(type => Post, prop('author'))
-  // posts: Post
+  @OneToMany(type => Post, prop('author'))
+  posts: Post
 }
