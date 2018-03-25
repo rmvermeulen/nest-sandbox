@@ -15,4 +15,8 @@ const rootOrmModule = TypeOrmModule.forRoot({
   imports: [rootOrmModule],
   exports: [rootOrmModule],
 })
-export class OrmModule {}
+export class OrmModule {
+  static forRoot() {
+    return rootOrmModule
+  }
+}

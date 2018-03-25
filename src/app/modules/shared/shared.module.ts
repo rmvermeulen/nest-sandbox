@@ -9,7 +9,7 @@ const moduleTyped = createTypedFromFn(Module)
 type ModuleArg = typeof moduleTyped.Args[0]
 
 const components: ModuleArg['components'] = [SharedService]
-const modules: ModuleArg['modules'] = [OrmModule]
+const modules: ModuleArg['modules'] = [OrmModule.forRoot()]
 
 @Module({
   imports: modules,
