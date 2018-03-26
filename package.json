@@ -19,10 +19,11 @@
     "vscode:lint": "tslint -p tsconfig.json"
   },
   "lint-staged": {
-    "*.json": [
+    "**/*.json": [
       "yarn format",
       "git add"
-    ],
+    ],"src/**/*.graphql":[      "yarn test --findRelatedTests"
+],
     "src/**/*.ts": [
       "yarn format",
       "yarn fix:fancy",
