@@ -4,7 +4,7 @@ module.exports = {
   },
   setupTestFrameworkScriptFile: './setupJest.ts',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node', 'graphql'],
   moduleNameMapper: {
     '@app/(.*)': '<rootDir>/src/app/$1',
     '@modules/(.*)': '<rootDir>/src/app/modules/$1',
