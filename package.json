@@ -2,6 +2,8 @@
   "name": "nest-sandbox",
   "version": "2.0.0",
   "description": "Nest TypeScript starter repository, trying graphql + multi db",
+  "main": "index.js",
+  "author": "Rasmus Vermeulen <vermeulen.rasmus@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "NODE_ENV=production node .",
@@ -10,20 +12,26 @@
     "tests": "jest --watch",
     "types": "types-installer install --toDev",
     "build": "tsc",
-    "postbuild":"# transform imports with babel",
+    "postbuild": "# transform imports with babel",
     "precommit": "lint-staged",
     "format": "prettier --write",
     "fix": "yarn lint --fix",
     "fix:fancy": "yarn fix -t code-frame",
-    "lint":"tslint -p tsconfig.json -t stylish",
+    "lint": "tslint -p tsconfig.json -t stylish",
     "vscode:lint": "tslint -p tsconfig.json"
   },
   "lint-staged": {
+    "package.json": [
+      "yarn init -y",
+      "git add"
+    ],
     "**/*.json": [
       "yarn format",
       "git add"
-    ],"src/**/*.graphql":[      "yarn test --findRelatedTests"
-],
+    ],
+    "src/**/*.graphql": [
+      "yarn test --testNamePattern 'queries|query|graphql' # "
+    ],
     "src/**/*.ts": [
       "yarn format",
       "yarn fix:fancy",
@@ -83,6 +91,5 @@
     "types-installer": "^1.4.0",
     "typescript": "^2.4.2"
   },
-  "main": "index.js",
-  "author": "Rasmus Vermeulen <vermeulen.rasmus@gmail.com>"
+  "repository": "git@github.com:rmvermeulen/nest-sandbox.git"
 }
