@@ -24,7 +24,11 @@ describe('Server', () => {
   it(`serves the IDE`, () =>
     request(server)
       .get('/graphiql')
-      .expect(200))
+      .expect(200)
+      .then(({ text }) => {
+        expect(text).toMatch(/graphiql/)
+        expect(text).toMatch(/graphQLHttpFetcher/)
+      }))
 
   // graphql helper
   const getQuery = (query: string) =>
